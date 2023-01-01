@@ -4,7 +4,7 @@ import pandas as pd
 st.title("Hi!")
 
 ## Obtaining master CSV file in one instantiation
-@st.experimental_singleton
+@st.experimental_memo
 def get_courses(file) -> pd.DataFrame:
     courses = pd.read_csv(file)
     return courses
