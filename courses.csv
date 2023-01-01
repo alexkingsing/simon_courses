@@ -1,63 +1,63 @@
-﻿Concentration,Specialization,required?,top,course
-Consulting,Strategy,0,1,Organization & Strategy
-Consulting,Strategy,0,1,Game Theory for Managers
-Consulting,Strategy,0,1,Pricing Policies
-Consulting,Strategy,0,1,Human Resource Strategy
-Consulting,Strategy,0,1,Advanced Pricing
-Consulting,Strategy,0,1,Corporate Governance
-Consulting,Strategy,0,1,Business Economics of the Healthcare Industry
-Consulting,Strategy,0,0,Managerial Accounting and Performance Measurement
-Consulting,Strategy,0,0,Financial Statement Analysis with Data Analytics
-Consulting,Strategy,0,0,Business Process Analysis & Design
-Consulting,Strategy,0,0,Advanced Business Modeling and Analysis using spreadsheets
-Consulting,Strategy,0,0,New venture development and managing for long term success
-Consulting,Strategy,0,0,Corporate finance
-Consulting,Strategy,0,0,Mergers and Acquisitions
-Consulting,Strategy,0,0,Corporate Restructuring
-Consulting,Strategy,0,0,Negotiation Theory & Practice: Bargaining for value
-Consulting,Strategy,0,0,Advanced marketing strategy
-Consulting,Strategy,0,0,New Product Strategy
-Consulting,Strategy,0,0,B2B Pricing
-Consulting,Strategy,0,0,Operations strategy
-Consulting,Strategy,0,0,Process Improvement
-Consulting,Strategy,0,0,Strategy beyond markets
-Consulting,Strategy,0,0,Advanced competitive strategy
-Consulting,Pricing,1,0,Pricing Policies
-Consulting,Pricing,0,1,B2B Pricing
-Consulting,Pricing,0,1,Advanced Pricing
-Consulting,Pricing,0,1,Pricing Analytics
-Consulting,Pricing,0,1,Game Theory for Managers
-Consulting,Pricing,0,0,Managerial Accounting and Performance Measurement
-Consulting,Pricing,0,0,Negotiation Theory & Practice: Bargaining for value
-Consulting,Pricing,0,0,Causal and Predictive Analytics
-Consulting,Pricing,0,0,Business Economics of the Healthcare Industry
-Consulting,Pricing,0,0,Marketing Research
-Consulting,Pricing,0,0,Advanced marketing strategy
-Consulting,Pricing,0,0,Advanced competitive strategy
-Consulting,Technology,1,0,Business Process Analysis & Design
-Consulting,Technology,1,0,Introduction to Business Analytics
-Consulting,Technology,1,0,Strategy and Business Systems consulting practicum
-Consulting,Technology,0,1,Managerial Accounting and Performance Measurement
-Consulting,Technology,0,1,Managing Digital Products and Platforms
-Consulting,Technology,0,1,Digital Business Strategy
-Consulting,Technology,0,1,Advanced Business Modeling and Analysis using spreadsheets
-Consulting,Technology,0,1,Social media and text analytics
-Consulting,Technology,0,1,Digital marketing strategy
-Consulting,Technology,0,1,Financial Technology
-Consulting,Technology,0,1,Supply chain analytics
-Consulting,Technology,0,1,Service management
-Consulting,Technology,0,1,Operations strategy
-Consulting,Technology,0,1,Process Improvement
-Consulting,Technology,0,1,Project management
-Consulting,Operations,1,0,Managerial Accounting and Performance Measurement
-Consulting,Operations,1,0,Strategy and Business Systems consulting practicum
-Consulting,Operations,1,0,Supply chain analytics
-Consulting,Operations,1,0,Process Improvement
-Consulting,Operations,0,1,Business Process Analysis & Design
-Consulting,Operations,0,1,Advanced Business Modeling and Analysis using spreadsheets
-Consulting,Operations,0,1,Digital Business Strategy
-Consulting,Operations,0,1,Service management
-Consulting,Operations,0,1,Operations strategy
-Consulting,Operations,0,1,Project management
-Consulting,Operations,0,1,Organization & Strategy
-Consulting,Operations,0,1,Human Resource Strategy
+﻿Concentration,Specialization,required?,top,bottom,course
+Consulting,Strategy,0,1,0,Organization & Strategy
+Consulting,Strategy,0,1,0,Game Theory for Managers
+Consulting,Strategy,0,1,0,Pricing Policies
+Consulting,Strategy,0,1,0,Human Resource Strategy
+Consulting,Strategy,0,1,0,Advanced Pricing
+Consulting,Strategy,0,1,0,Corporate Governance
+Consulting,Strategy,0,1,0,Business Economics of the Healthcare Industry
+Consulting,Strategy,0,0,1,Managerial Accounting and Performance Measurement
+Consulting,Strategy,0,0,1,Financial Statement Analysis with Data Analytics
+Consulting,Strategy,0,0,1,Business Process Analysis & Design
+Consulting,Strategy,0,0,1,Advanced Business Modeling and Analysis using spreadsheets
+Consulting,Strategy,0,0,1,New venture development and managing for long term success
+Consulting,Strategy,0,0,1,Corporate finance
+Consulting,Strategy,0,0,1,Mergers and Acquisitions
+Consulting,Strategy,0,0,1,Corporate Restructuring
+Consulting,Strategy,0,0,1,Negotiation Theory & Practice: Bargaining for value
+Consulting,Strategy,0,0,1,Advanced marketing strategy
+Consulting,Strategy,0,0,1,New Product Strategy
+Consulting,Strategy,0,0,1,B2B Pricing
+Consulting,Strategy,0,0,1,Operations strategy
+Consulting,Strategy,0,0,1,Process Improvement
+Consulting,Strategy,0,0,1,Strategy beyond markets
+Consulting,Strategy,0,0,1,Advanced competitive strategy
+Consulting,Pricing,1,0,0,Pricing Policies
+Consulting,Pricing,0,1,0,B2B Pricing
+Consulting,Pricing,0,1,0,Advanced Pricing
+Consulting,Pricing,0,1,0,Pricing Analytics
+Consulting,Pricing,0,1,0,Game Theory for Managers
+Consulting,Pricing,0,0,1,Managerial Accounting and Performance Measurement
+Consulting,Pricing,0,0,1,Negotiation Theory & Practice: Bargaining for value
+Consulting,Pricing,0,0,1,Causal and Predictive Analytics
+Consulting,Pricing,0,0,1,Business Economics of the Healthcare Industry
+Consulting,Pricing,0,0,1,Marketing Research
+Consulting,Pricing,0,0,1,Advanced marketing strategy
+Consulting,Pricing,0,0,1,Advanced competitive strategy
+Consulting,Technology,1,0,0,Business Process Analysis & Design
+Consulting,Technology,1,0,0,Introduction to Business Analytics
+Consulting,Technology,1,0,0,Strategy and Business Systems consulting practicum
+Consulting,Technology,0,1,0,Managerial Accounting and Performance Measurement
+Consulting,Technology,0,1,0,Managing Digital Products and Platforms
+Consulting,Technology,0,1,0,Digital Business Strategy
+Consulting,Technology,0,1,0,Advanced Business Modeling and Analysis using spreadsheets
+Consulting,Technology,0,1,0,Social media and text analytics
+Consulting,Technology,0,1,0,Digital marketing strategy
+Consulting,Technology,0,1,0,Financial Technology
+Consulting,Technology,0,1,0,Supply chain analytics
+Consulting,Technology,0,1,0,Service management
+Consulting,Technology,0,1,0,Operations strategy
+Consulting,Technology,0,1,0,Process Improvement
+Consulting,Technology,0,1,0,Project management
+Consulting,Operations,1,0,0,Managerial Accounting and Performance Measurement
+Consulting,Operations,1,0,0,Strategy and Business Systems consulting practicum
+Consulting,Operations,1,0,0,Supply chain analytics
+Consulting,Operations,1,0,0,Process Improvement
+Consulting,Operations,0,1,0,Business Process Analysis & Design
+Consulting,Operations,0,1,0,Advanced Business Modeling and Analysis using spreadsheets
+Consulting,Operations,0,1,0,Digital Business Strategy
+Consulting,Operations,0,1,0,Service management
+Consulting,Operations,0,1,0,Operations strategy
+Consulting,Operations,0,1,0,Project management
+Consulting,Operations,0,1,0,Organization & Strategy
+Consulting,Operations,0,1,0,Human Resource Strategy
