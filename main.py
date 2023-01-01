@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 
-st.title("Hi!")
+st.header("Simon Business School, MBA course specialization tool")
 
 ## Obtaining master CSV file in one instantiation
 @st.experimental_memo
@@ -12,13 +12,32 @@ def get_courses(file) -> pd.DataFrame:
 all_courses = get_courses("courses.csv")
 
 st.sidebar.write("Main Menu")
-concentration = st.sidebar.radio("Choose your concentration",["Consulting","Finance","Marketing"])
+concentration = st.sidebar.radio("Choose your concentration",["Main page", "Consulting","Finance","Marketing"])
 
 match concentration:
+
+    case "Main page":
+        st.write('''
+                Welcome!
+
+                The purpose of this tool is to help you plan your specializations based on your course selection. A few notes:
+                \n
+                - Core courses are NOT included in this tool since everyone has to take them.
+                - Credit calculation is not included as part of this tool.
+                - Minor(s) analysis is currently not in scope of this tool...
+
+                ''')
+
     case "Consulting":
         
+        # Specialization requirements
+        strategy = {"required":0, "selective":7}
+        pricing = {"required":0, "selective":5}
+        technology = {"required":3, "selective":3}
+        operations = {"required":4, "selective":2}
+
         # Catchy title space...
-        st.subheader("Consulting!")
+        st.subheader("Consulting Specializations!")
 
         ### PART 1 -> CREATE ALL RELEVANT TABLES AND LISTS FOR FUTURE ITERATION ###
 
@@ -48,7 +67,12 @@ match concentration:
         # creating binary mask with selected courses to facilitate filtering
         mask = consulting_df["course"].isin(personal_courses)
 
-        st.write(consulting_df[consulting_df["course"].isin(personal_courses)])
+        # creating a segmented dataframe to hold filtered results
+        segmented_df = consulting_df[consulting_df["course"].isin(personal_courses)]
+
+        st.write(segmented_df)
+
+
 
     case "Finance":
         st.subheader("Under construction...")
