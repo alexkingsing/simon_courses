@@ -40,7 +40,7 @@ match concentration:
         # Catchy title space...
         st.subheader("Consulting Specializations!")
 
-        ##### PART 1 -> CREATE ALL RELEVANT TABLES AND LISTS FOR FUTURE ITERATION #####
+        ########## PART 1 -> CREATE ALL RELEVANT TABLES AND LISTS FOR FUTURE ITERATION ##########
 
         # Extract array of courses for future selection
         consulting_specializations = all_courses["Specialization"].unique()
@@ -56,21 +56,18 @@ match concentration:
         
         consulting_df = concentration_courses(all_courses, "Consulting")
 
-        # create a selection of all potential courses for the person to iterate
+        # create a selection of all potential courses for the person to iterate as a FORM
         personal_courses = st.multiselect("Please select the courses you've taken or are planning to take", consulting_courses)
         
-        ##### PART 2 -> PERFORM ALL RELEVANT SEGMENTATIONS TO CALCULATE COMPLETION #####
-        st.write(consulting_df)
+        ########## PART 2 -> PERFORM ALL RELEVANT SEGMENTATIONS TO CALCULATE COMPLETION ##########
 
         # creating binary mask with selected courses to facilitate filtering
         mask = consulting_df["course"].isin(personal_courses)
 
         # creating a segmented dataframe to hold filtered results
-        segmented_df = consulting_df[consulting_df["course"].isin(personal_courses)]
+        consulting_segmented_df = consulting_df[mask]
 
-        st.write(segmented_df)
-
-        ##### PART 3 -> CREATE VISUAL SEGMENTATION #####
+        ########## PART 3 -> CREATE VISUAL SEGMENTATION ##########
         
         # tab quantity hard-coded, because why not...
         tab1, tab2, tab3, tab4 = st.tabs(consulting_specializations.tolist())
@@ -78,13 +75,20 @@ match concentration:
         with tab1:
             st.write("**Strategy completion**")
             
-            top_strategy = segmented_df[segmented_df["Specialization"]=="Strategy"]["top"].sum()
-            bottom_strategy = segmented_df[segmented_df["Specialization"]=="Strategy"]["bottom"].sum()
+            ##Creating small dataframes with the individual top and down segmentations for future use
+            # dataframe if course is for Strategy AND is needed as 'top'
+            top_strategy = consulting_df[(consulting_df["top"]>0) & (consulting_df["Specialization"]=="Strategy")]
+            # dataframe if course is for Strategy AND is needed as 'bottom'
+            bottom_strategy = consulting_df[(consulting_df["bottom"]>0) & (consulting_df["Specialization"]=="Strategy")]
 
-            y0 = [top_strategy, bottom_strategy]
+            ## Obtaining counts of how many courses the person has from each list
+            top_count_strat = consulting_segmented_df[consulting_segmented_df["Specialization"]=="Strategy"]["top"].sum()
+            bottom_count_strat = consulting_segmented_df[consulting_segmented_df["Specialization"]=="Strategy"]["bottom"].sum()
+
+            y0 = [top_count_strat, bottom_count_strat]
 
             ### @@@@@@@@@@@@ ADD LOGIC FOR WHEN THE NUMBERS WOULD BE NEGATIVE...
-            y1 = [strategy["top"] - top_strategy, strategy["bottom"] - bottom_strategy]
+            y1 = [strategy["top"] - top_count_strat, strategy["bottom"] - bottom_count_strat]
 
             # Create stacked bar chart to show total courses selected vs needed for specialization
             fig1 = go.Figure(data=[
@@ -94,18 +98,22 @@ match concentration:
             fig1.update_layout(barmode='stack')
             st.plotly_chart(fig1)
 
-            #### PENDING -> CREATE TABLE DETAILING PENDINGS AND VISIBLES
+            ########## PART 4 -> CREATE TABLE DETAILING PENDINGS ##########
+
+            col1, col2 = st.columns(2)
+            top_pending = top_strategy[~top_strategy["course"].isin(consulting_segmented_df[consulting_segmented_df["top"]==1]["course"])]
+            bottom_pending = bottom_strategy[~bottom_strategy["course"].isin(consulting_segmented_df[consulting_segmented_df["bottom"]==1]["course"])]
+
+            with col1:
+                st.write(f"You have taken **{top_count_strat} courses** from the top list. You need **{strategy['top']} in total**.")
+                st.dataframe(top_pending.drop(["required?","top","bottom"], axis=1))
+
+            with col2:
+                st.write(f"You have taken **{bottom_count_strat} courses** from the bottom list. You need **{strategy['bottom']} in total**.")
+                st.dataframe(bottom_pending.drop(["required?","top","bottom"], axis=1))
 
         with tab2:
             st.write("**Pricing completion**")
-            
-            fig2 = go.Figure(data=[
-                go.Bar(name="Completed courses", x=["Top list", "Bottom list"], y=[1,4]),
-                go.Bar(name="Pending courses",x=["Top list", "Bottom list"], y=[3,1])])
-
-            fig2.update_layout(barmode='stack')
-
-            st.plotly_chart(fig2)
 
         with tab3:
             st.write("**Technology completion**")
